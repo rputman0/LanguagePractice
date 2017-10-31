@@ -1,3 +1,5 @@
+#adapted from a youtube coding-challenge on fractal trees
+
 import pygame, math
  
 pygame.init()
@@ -17,8 +19,8 @@ def point(x,y):
 
 def drawLine(point,nextPt):
     pygame.draw.line(screen,blue,point,nextPt,1)
-
-
+  
+#get the new point, by adding the current point and rotating it by an angle  
 def generateNewPt(point,angle,depth):
     return ( (point[0] + int(math.cos(math.radians(angle))*depth*size)),
               point[1] + int(math.sin(math.radians(angle))*depth*size))
@@ -31,6 +33,7 @@ def fractalTree(point,angle,depth):
         
         drawLine( (point[0],point[1]),(newPos) )
 
+        #draw both brances
         fractalTree(newPos,angle-20,depth-1)
         fractalTree(newPos,angle+20,depth-1)
         
