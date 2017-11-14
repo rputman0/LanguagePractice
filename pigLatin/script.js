@@ -6,8 +6,4 @@ let words = phrase.split(" ")
 for(let i=0;i<words.length;i++)
 	words[i] = words[i].charAt(words[i].length-3) + words[i].substring(0,words[i].length-3);
 
-console.log(words);
-
-wordsInString = words.join(" ");
-
-document.getElementById("pigLatin").innerHTML = wordsInString;
+document.getElementById("pigLatin").innerHTML = words.join(" ");
