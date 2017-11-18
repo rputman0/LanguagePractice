@@ -1,0 +1,21 @@
+#vowel removal
+
+def removeVowels(sentence):
+    sentence = list(sentence)
+    for i in range(0,len(sentence)):
+        if(isVowel(sentence[i])):
+            sentence[i] = ""
+
+    return "".join(sentence)
+
+def isVowel(letter):
+    vowels = "aeiou"
+    for i in range(0,len(vowels)):
+        if(letter == vowels[i]):
+            return True
+
+    return False
+
+
+word = input("Type in word: ")
+print(removeVowels(word))
